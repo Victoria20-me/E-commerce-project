@@ -1,5 +1,5 @@
 "use client";
-
+import { useCart } from "@/app/context/CartContext";
 import { useState, useEffect } from "react";
 import { getSingleProduct } from "@/app/lib/product";
 import { useParams } from "next/navigation";
@@ -15,7 +15,7 @@ export default function ProductPage() {
     const fetchProduct = async () => {
       try {
         const data = await getSingleProduct(id);
-      setProduct(data);
+        setProduct(data);
       } catch (error) {
         console.error("Error fetching product:", error);
       }
@@ -32,6 +32,7 @@ export default function ProductPage() {
       <h1>{product.title}</h1>
       <p>{product.description}</p>
       <p>${product.price}</p>
+      <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   );
 }
