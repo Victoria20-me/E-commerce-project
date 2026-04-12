@@ -43,7 +43,7 @@ export default function ProductPage() {
         <button
           onClick={() => {
             addToCart(product);
-            toast.success(`${product.title} added to cart`);
+            toast.success(`${product.title} added to cart🛒`);
           }}
           className="bg-black text-white px-6 py-3 rounded w-full"
         >

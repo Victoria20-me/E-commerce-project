@@ -1,5 +1,6 @@
 "use client";
 import { useCart } from "../context/CartContext";
+import Link from "next/link";
 
 export default function CartPage() {
   const { cart, removeFromCart, increaseQty, decreaseQty } = useCart();
@@ -44,6 +45,9 @@ export default function CartPage() {
       <div className="mt-6 text-right">
         <h2 className="text-xl font-bold">Total: ${total}</h2>
       </div>
+      <Link href="/checkout">
+        <button className="mt-4 bg-green-600 text-white px-6 py-2">Proceed to Checkout</button>
+      </Link>
     </div>
   );
 }
