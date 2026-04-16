@@ -14,9 +14,13 @@ export const getCategories = async () => {
   return res.data;
 };
 export const getProductsByCategory = async (category) => {
-  console.log("fetching category:", category);
-
-  const res = await api.get(`/products/category/${category}`);
-  console.log("api response:", res.data);
-  return res.data.products;
+  try {
+    console.log("fetching category:", category);
+    const res = await api.get(`/products/category/${category}`);
+    console.log("api response:", res.data);
+    return res.data.products;
+  } catch (error) {
+    console.error("Category error:", error);
+    return [];
+  }
 };
