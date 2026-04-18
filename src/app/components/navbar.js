@@ -5,6 +5,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { useEffect, useState } from "react";
+import DarkModeToggle from "./toggle";
 
 export default function Navbar() {
   const { cart } = useCart();
@@ -16,29 +17,27 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50">
-      <Link href="/">
-        <h1 className="text-xl font-bold text-blak cursor-pointer">
-          <FaShoppingBag />
-          MyStore
-        </h1>
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-800">
+      <Link href="/" className="flex items-center gap-2 text-lg font-bold">
+        <FaShoppingBag className="text-green-600" />
+        <span>MyStore</span>
       </Link>
-      <div className="flex items-center gap-6">
-        <Link href="/" className="hover:text-green-600">
+      <div className="flex items-center gap-6 text-sm font-medium">
+        <Link href="/" className="flex items-center gap-1 hover:text-green-600 transition">
           <FaHome />
-          Home
+         <span>Home</span> 
         </Link>
 
         <Link href="/cart" className="relative">
-          {/* {" "} */}
           <FaShoppingCart />
           <span className="ml-1">Cart</span>
-          { mounted && cart.length > 0 && (
+          {mounted && cart.length > 0 && (
             <span className="absolute -top-2 -right-4 bg-green-600 text-white text-xs px-2 py-1 rounded-full">
               {cart.length}
             </span>
           )}
         </Link>
+        <DarkModeToggle />
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@
 import Link from "next/link";
 export default function SuccessPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center p-6">
+    <div className="flex flex-col items-center justify-center h-screen text-center p-6 text-black dark:text-white">
       <h1 className="text-4xl font-bold text-green-600 mb-4">
         Order Succesful
       </h1>

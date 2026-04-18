@@ -10,10 +10,14 @@ export default function CartPage() {
     .toFixed(2);
   console.log(useCart());
   if (cart.length === 0) {
-    return <p className="p-6">Your cart is empty</p>;
+    return (
+      <p className="p-6 bg-transparent dark:bg-gray-900 text-black dark:text-white ">
+        Your cart is empty
+      </p>
+    );
   }
   return (
-    <div className="p-6 max-w-3xl mx-auto">
+    <div className="p-6 max-w-3xl mx-auto bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
       <h1 className="text-2xl font-bold mb-6">Your Cart</h1>
       {cart.map((item, index) => (
         <div
@@ -35,7 +39,7 @@ export default function CartPage() {
           </div>
           <button
             onClick={() => removeFromCart(index)}
-            className="bg-red-500 text-white px-2 py-1 ronunded"
+            className="bg-red-500 text-white px-2 py-1 rounded"
           >
             Remove
           </button>
@@ -46,7 +50,9 @@ export default function CartPage() {
         <h2 className="text-xl font-bold">Total: ${total}</h2>
       </div>
       <Link href="/checkout">
-        <button className="mt-4 bg-green-600 text-white px-6 py-2">Proceed to Checkout</button>
+        <button className="mt-4 bg-green-600 text-white px-6 py-2">
+          Proceed to Checkout
+        </button>
       </Link>
     </div>
   );

@@ -28,8 +28,8 @@ export default function ProductPage() {
     return <p>Loading product...</p>;
   }
   return (
-    <div className="p-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-      <img
+    <div className="p-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-black dark:text-white">
+      <img 
         src={product.thumbnail}
         alt={product.title}
         className="w-full h-80 object-contain"
@@ -45,7 +45,7 @@ export default function ProductPage() {
             addToCart(product);
             toast.success(`${product.title} added to cart🛒`);
           }}
-          className="bg-black text-white px-6 py-3 rounded w-full"
+          className="bg-black text-white  dark:bg-white dark:text-black px-6 py-3 rounded w-full"
         >
           Add to Cart
         </button>

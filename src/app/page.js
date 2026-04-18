@@ -7,6 +7,7 @@ import {
 } from "@/app/lib/product";
 import Link from "next/link";
 import ProductCard from "./components/ProductCard";
+import SkeletonCard from "./components/skeleton";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -15,6 +16,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     const fetchProducts = async () => {
       const data = await getAllProducts();
@@ -60,9 +62,23 @@ export default function Home() {
   console.log(products);
 
   return (
-    <main className="p-4">
-      {loading && <p className="text-red-500 mt-4">Loading products....</p>}
-      <div>
+    <main className="max-w-6xl mx-auto px-4">
+      {loading && (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+          {[...Array(8)].map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      )}
+      <div className="mb-6 p-6 rounded-lg bg-gray-100 dark:bg-gray-900 text-centre">
+        <h1 className="text-3xl font-bold mb-2 text-black dark:text-white">
+          Welcome to MyStore
+        </h1>
+        <p className="text-gray-600 dark:text-gray-300">
+          Find the best products at the best prices
+        </p>
+      </div>
+      <div className="">
         <input
           type="text"
           placeholder="search products....."
@@ -77,7 +93,7 @@ export default function Home() {
 
             setCategory(e.target.value);
           }}
-          className="border p-2 rounded"
+          className="border p-2 rounded bg-white dark:bg-gray-800"
         >
           <option value="all">All</option>
           {categories.map((cat) => (
@@ -93,32 +109,13 @@ export default function Home() {
         <p className="text-center mt-6">No products found</p>
       )}
       {error && <p className="text-red-500 text-center">{error}</p>}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        {filteredProducts.map((product) => (
-          <Link
-            key={product.id}
-            href={`/product/${product.id}`}
-            className="block"
-          >
-            <div className="border rounded-lg p-4 cursor-pointer hover:shadow-xl transition duration-300 bg-white">
-              <img
-                src={product.thumbnail}
-                alt={product.title}
-                className="h-40 mx-auto object-contain"
-              />
-              <h2 className="text-sm font-semibold mt-2 text-green-600">
-                {product.title}
-              </h2>
-              <p className="text-lg font-bold mt-2 text-green-600">
-                ${product.price}
-              </p>
-              <button className="mt-3 w-full bg-black text-white py-2 rounded">
-                View Product
-              </button>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {!loading && (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </main>
   );
 }
