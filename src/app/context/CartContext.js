@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-  });
+  },[cart]);
 
   // add to cart(with quantity logic)
   const addToCart = (product) => {

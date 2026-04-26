@@ -39,7 +39,7 @@ export default function CartPage() {
           </div>
           <button
             onClick={() => removeFromCart(index)}
-            className="bg-red-500 text-white px-2 py-1 rounded"
+            className="bg-green-600 text-white px-6 py-2 rounded transition duration-200 hover:scale-105 active:scale-95"
           >
             Remove
           </button>
@@ -50,7 +50,7 @@ export default function CartPage() {
         <h2 className="text-xl font-bold">Total: ${total}</h2>
       </div>
       <Link href="/checkout">
-        <button className="mt-4 bg-green-600 text-white px-6 py-2">
+        <button className="mt-4 bg-green-600 text-white px-6 py-2 transition duration-200 hover:scale-105 active:scale-95">
           Proceed to Checkout
         </button>
       </Link>

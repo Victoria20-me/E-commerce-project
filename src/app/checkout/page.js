@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 export default function checkOutPage() {
   const { cart, clearCart } = useCart();
   const router = useRouter();
+  const [processing, setProcessing] = useState(false);
 
   const [mounted, setMounted] = useState(false);
 
@@ -23,6 +24,7 @@ export default function checkOutPage() {
 
   // handle order
   const handleOrder = () => {
+    setProcessing(true);
     toast.success("Order placed successful 🎉  ");
     clearCart(); //clears state and local storage
     setTimeout(() => {
@@ -51,7 +53,7 @@ export default function checkOutPage() {
               </p>
             </div>
           </div>
-          <p>${item.price * item.quantity}</p>
+          <p className="text-lg font-bold">${item.price * item.quantity}</p>
         </div>
       ))}
       <div className="mt-6 text-right">
@@ -59,9 +61,10 @@ export default function checkOutPage() {
       </div>
       <button
         onClick={handleOrder}
-        className="mt-6 w-full bg-green-600 text-white py-3 rounded font-bold"
+        disabled={processing}
+        className=" bg-green-600 text-white py-2 px-6 rounded-md font-bold transition duration-200 hover:scale-105 active:scale-95"
       >
-        Place Order
+        {processing ? "Processing...." : "Place Order"}
       </button>
     </div>
   );
