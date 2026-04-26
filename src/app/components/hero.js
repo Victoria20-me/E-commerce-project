@@ -23,7 +23,7 @@ export default function Heropage() {
           </p>
           <div className="flex gap-4">
             <Link href="#products">
-              <button className="bg-green-600 text-white dark:bg-white dark:text-black px-6 py-2 rounded-md font-semibold hover:bg-green-900 dark:hover-gray-700 transition shadow-lg">
+              <button className="bg-green-600 text-white dark:bg-white dark:text-black px-6 py-2 rounded-md font-semibold hover:bg-green-900 dark:hover-bg-gray-700 transition shadow-lg">
                 Shop now →
               </button>
             </Link>

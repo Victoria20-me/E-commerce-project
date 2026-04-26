@@ -42,7 +42,7 @@ export default function checkOutPage() {
       {cart?.map((item) => (
         <div
           key={item.id}
-          className="flex items-center border p-4 mb-4 rounded"
+          className="flex items-center justify-between border p-4 mb-4 rounded"
         >
           <div className="flex items-center gap-4">
             <img src={item.thumbnail} className="h-16" />

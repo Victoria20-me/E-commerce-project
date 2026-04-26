@@ -62,7 +62,7 @@ export default function Home() {
   }, [category]);
 
   return (
-    <main className="mb-10 py-16 bg-linear-to-b from-gray-100 to-transparent dark:from-gray-800 dark:to-transparent rounded-xl animate-fadeIn">
+    <main className="mb-10 pt-20 py-16 bg-linear-to-b from-gray-100 to-transparent dark:from-gray-800 dark:to-transparent rounded-xl animate-fadeIn">
       <Heropage />
       {loading && (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
@@ -73,13 +73,13 @@ export default function Home() {
       )}
 
       <div className="mt-10 mb-12 px-4">
-        <div className=" max-w-4xl flex flex-col md:flex-row gap-4 mt-6 mb-10 mx-auto">
+        <div className=" max-w-5xl flex items-center gap-4 mt-6 mb-10 px-4 mx-auto">
           <input
             type="text"
             placeholder="search products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className=" flex-1 border p-3 rounded-md mb-4 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className=" flex-1 h-12 border px-4 rounded-lg bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
           <select
             value={category}
@@ -88,7 +88,7 @@ export default function Home() {
 
               setCategory(e.target.value);
             }}
-            className="border p-3 rounded-md w-full md:w-56 bg-white dark:bg-gray-800 focus:outline-none"
+            className=" h-12 px-4 border rounded-lg w-52 bg-white dark:bg-gray-800 focus:outline-none"
           >
             <option value="all" className="font-bold">
               All Categories

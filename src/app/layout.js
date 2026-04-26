@@ -13,7 +13,7 @@ import Footer from "./components/footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen pt-20 w-full bg-white dark:bg-gray-900  text-black dark:text-white transition-colors duration-300">
+      <body className="min-h-screen w-full bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
         <CartProvider>
           <Navbar />
 
