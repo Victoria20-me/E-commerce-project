@@ -73,13 +73,13 @@ export default function Home() {
       )}
 
       <div className="mt-10 mb-12 px-4">
-        <div className=" max-w-5xl flex items-center gap-4 mt-6 mb-10 px-4 mx-auto">
+        <div className=" max-w-5xl flex flex-col sm:flex-row items-center gap-3 mt-6 mb-10 px-4 mx-auto">
           <input
             type="text"
             placeholder="search products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className=" flex-1 h-12 border px-4 rounded-lg bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className=" w-full h-12 border px-4 rounded-lg bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
           />
           <select
             value={category}
@@ -88,7 +88,7 @@ export default function Home() {
 
               setCategory(e.target.value);
             }}
-            className=" h-12 px-4 border rounded-lg w-52 bg-white dark:bg-gray-800 focus:outline-none"
+            className=" h-12 w-full px-4 border rounded-lg sm:w-52 bg-white dark:bg-gray-800 focus:outline-none"
           >
             <option value="all" className="font-bold">
               All Categories
@@ -114,7 +114,7 @@ export default function Home() {
       )}
       {error && <p className="text-red-500 text-center">{error}</p>}
       {!loading && (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 px-4">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

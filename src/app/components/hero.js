@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Heropage() {
   return (
-    <section className="relative w-full h-125 md:h-150 mb-16 ">
+    <section className="relative w-full h-[60vh] md:h-[80vh] mb-16 ">
       <Image
         src="/hero.jpg"
         alt="Hero"
@@ -13,11 +13,11 @@ export default function Heropage() {
       />
       <div className="absolute inset-0 bg-black/50 dark:bg-black/70">
         <div className="absolute inset-0 flex flex-col justify-center items-start text-left md:px-20 text-white px-4">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
             Shop Smarter,
             <br/> Faster ⚡
           </h1>
-          <p className="text-gray-200 dark:text-gray-300 max-w-xl text-sm md:text-lg mb-6 drop-shadow-md">
+          <p className="text-sm sm:text-base md:text-lg text-gray-200 dark:text-gray-300 max-w-xl mb-6 drop-shadow-md">
             Discover amazing products at unbeatable prices. Built for speed,
             designed for simplicity.
           </p>

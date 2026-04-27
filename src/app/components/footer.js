@@ -1,8 +1,17 @@
+"use client";
+import { useState } from "react";
+
 export default function Footer() {
+const [open, setOpen] = useState(null);
+
+const toggle = (section) => {
+  setOpen(open === section ? null : section);
+};
   return (
-    <footer className="relative mt-20 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-black text-gray-700 dark:text-gray-300">
+    <footer className="relative mt-20 bg-linear-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-black text-gray-700 dark:text-gray-300">
       {/* TOP SECTION */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+      <div className="h-px bg-linear-to-r from-transparent via-green-500 to-transparent">
+        <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
         {/* BRAND */}
         <div>
           <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">
@@ -64,6 +73,7 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="text-center py-5 text-sm text-gray-500 dark:text-gray-400">
         © 2026 MyStore. All rights reserved.
+      </div>
       </div>
     </footer>
   );

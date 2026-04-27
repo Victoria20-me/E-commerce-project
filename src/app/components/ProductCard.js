@@ -11,12 +11,12 @@ export default function ProductCard({ product }) {
   
   return (
     <Link key={product.id} href={`/product/${product.id}`} className="block">
-      <div className=" relative border rounded-xl p-4 cursor-pointer hover:shadow-2xl group-hover:scale-[1.02] hover:translate-y-1 transition duration-300 bg-white dark:bg-gray-800 mb-6">
+      <div className=" relative border rounded-lg sm:p-4 cursor-pointer hover:shadow-2xl group-hover:scale-[1.02] hover:translate-y-1 transition duration-300 bg-white dark:bg-gray-800 mb-6">
         <img
           src={product.thumbnail}
           loading="lazy"
           alt={product.title}
-          className="h-40 mx-auto object-contain transition duration-300 group-hover:scale-105"
+          className="h-32 sm:h-40 mx-auto object-contain transition duration-300 group-hover:scale-105"
         />
         <h2 className="text-sm font-semibold mt-3 text-gray-800 dark:text-gray-200 line-clamp-1">
           {product.title}

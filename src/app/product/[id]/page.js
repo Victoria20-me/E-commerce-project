@@ -28,7 +28,7 @@ export default function ProductPage() {
     return <p className="p-6 animate-pulse">Loading product...</p>;
   }
   return (
-    <div className="p-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-black dark:text-white">
+    <div className="pt-24 p-6 max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-black dark:text-white">
       <img 
         src={product.thumbnail || "/placeholder.png"}
         alt={product.title}

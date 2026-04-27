@@ -37,7 +37,7 @@ export default function checkOutPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-transparent dark:bg-gray-900 text-black dark:text-white">
+    <div className="flex flex-col sm:flex-row sm:item-center sm:justify-between gap-4 border p-4 rounded  bg-transparent dark:bg-gray-900 text-black dark:text-white">
       <h1 className="text-2xl font-bold mb-6">Checkout</h1>
       {cart?.map((item) => (
         <div
