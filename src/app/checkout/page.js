@@ -37,35 +37,59 @@ export default function checkOutPage() {
   }
 
   return (
-    <div className="flex flex-col sm:flex-row sm:item-center sm:justify-between gap-4 border p-4 rounded  bg-transparent dark:bg-gray-900 text-black dark:text-white">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-24 pb-10 text-black dark:text-white">
       <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-      {cart?.map((item) => (
-        <div
-          key={item.id}
-          className="flex items-center justify-between border p-4 mb-4 rounded"
-        >
-          <div className="flex items-center gap-4">
-            <img src={item.thumbnail} className="h-16" />
-            <div>
-              <h2 className="font-semibold">{item.title}</h2>
-              <p className="font-bold">
-                ${item.price} x {item.quantity}
+
+      {/* CART ITEMS */}
+      <div className="flex flex-col gap-4">
+        {cart.map((item) => (
+          <div
+            key={item.id}
+            className="w-full flex flex-col sm:flex-row sm:items-center gap-4 border p-4 rounded-lg overflow-hidden"
+          >
+            {/* LEFT SIDE */}
+            <div className="flex items-center gap-3 w-full sm:w-auto min-w-0">
+              <img
+                src={item.thumbnail}
+                className="h-14 w-14 object-contain shrink-0"
+              />
+
+              <div className="min-w-0">
+                <h2 className="font-semibold text-sm sm:text-base truncate">
+                  {item.title}
+                </h2>
+
+                <p className="text-gray-500 text-sm">
+                  ${item.price} x {item.quantity}
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE (PRICE) */}
+            <div className="w-full sm:w-auto sm:ml-auto text-left sm:text-right">
+              <p className="text-lg font-bold text-green-600">
+                ${(item.price * item.quantity).toFixed(2)}
               </p>
             </div>
           </div>
-          <p className="text-lg font-bold">${item.price * item.quantity}</p>
-        </div>
-      ))}
-      <div className="mt-6 text-right">
-        <h2 className="text-xl font-bold">Total: ${total}</h2>
+        ))}
       </div>
-      <button
-        onClick={handleOrder}
-        disabled={processing}
-        className=" bg-green-600 text-white py-2 px-6 rounded-md font-bold transition duration-200 hover:scale-105 active:scale-95"
-      >
-        {processing ? "Processing...." : "Place Order"}
-      </button>
+
+      {/* TOTAL */}
+      <div className="mt-6 flex justify-between sm:justify-end">
+        <h2 className="text-lg sm:text-xl font-bold">Total: ${total}</h2>
+      </div>
+
+      {/* BUTTON */}
+      <div className="mt-4 w-full sm:flex sm:justify-end">
+        <button
+          onClick={handleOrder}
+          disabled={processing}
+          className="w-full sm:w-auto bg-green-600 text-white py-3 px-6 rounded-md font-bold transition hover:scale-105 active:scale-95"
+        >
+          {processing ? "Processing..." : "Place Order"}
+        </button>
+      </div>
     </div>
   );
 }
