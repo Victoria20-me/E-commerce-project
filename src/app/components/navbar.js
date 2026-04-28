@@ -54,8 +54,8 @@ export default function Navbar() {
             href="/cart"
             className=" relative hover:text-green-600 transition"
           >
-            <FaShoppingCart />
-            <span className="ml-1">Cart</span>
+            <FaShoppingCart className="text-2xl"/>
+            {/* / */}
             {cart.length > 0 && (
               <span className="absolute -top-2 -right-3 bg-green-600 text-white text-xs px-2 py-0.5 rounded-full">
                 {cart.length}

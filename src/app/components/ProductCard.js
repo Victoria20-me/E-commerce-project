@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
           alt={product.title}
           className="h-32 sm:h-40 mx-auto object-contain transition duration-300 group-hover:scale-105"
         />
-        <h2 className="text-sm font-semibold mt-3 text-gray-800 dark:text-gray-200 line-clamp-1">
+        <h2 className="text-sm font-semibold sm:text-base mt-3 text-gray-800 dark:text-gray-200 line-clamp-1">
           {product.title}
         </h2>
         <p className="text-lg font-bold mt-2 text-green-600">
