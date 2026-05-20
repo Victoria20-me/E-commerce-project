@@ -34,7 +34,7 @@ export default function Heropage() {
                   .getElementById("products")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="border font-semibold border-white dark:border-gray-700 px-7 py-2 rounded-md hover:bg-gray-800 dark:hover:bg-gray-800 transition"
+              className="border font-semibold border-white dark:border-gray-700 px-7 py-2 rounded-md hover:bg-green-900 dark:hover:bg-gray-700 transition"
             >
               Explore
             </button>
