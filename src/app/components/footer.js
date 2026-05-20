@@ -8,7 +8,7 @@ import {
 export default function Footer() {
   const [open, setOpen] = useState(null);
 
-  const toggle = (section) => {
+  const toggle = (section) => { 
     setOpen(open === section ? null : section);
   };
   return (

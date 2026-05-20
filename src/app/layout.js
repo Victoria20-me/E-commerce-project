@@ -8,7 +8,7 @@ import Footer from "./components/footer";
 // export const metadata = {
 //   title: "MyStore",
 //   description: "Shop the best products at great prices",
-// };
+// }; 
 
 export default function RootLayout({ children }) {
   return (

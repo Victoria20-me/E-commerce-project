@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-  },[cart]);
+  }, [cart]);
 
   // add to cart(with quantity logic)
   const addToCart = (product) => {
@@ -61,9 +61,16 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, increaseQty, decreaseQty, clearCart }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        increaseQty,
+        decreaseQty,
+        clearCart,
+      }}
     >
-      {children} 
+      {children}
     </CartContext.Provider>
   );
 }

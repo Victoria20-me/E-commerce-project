@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function CartPage() {
   const { cart, removeFromCart, increaseQty, decreaseQty } = useCart();
 
-  const total = cart
+  const total = cart 
     .reduce((sum, item) => sum + item.price * item.quantity, 0)
     .toFixed(2);
   console.log(useCart());

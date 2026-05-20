@@ -6,7 +6,7 @@ export default function Heropage() {
   return (
     <section className="relative w-full h-[60vh] md:h-[80vh] mb-16 ">
       <Image
-        src="/hero.jpg"
+        src="/her02.jpeg"
         alt="Hero"
         fill
         priority
