@@ -24,7 +24,7 @@ export default function Heropage() {
           </p>
           <div className="flex gap-4">
             <Link href="#products">
-              <button className="bg-green-600 text-white dark:bg-white dark:text-black px-6 py-2 rounded-md font-semibold hover:bg-green-900 dark:hover-bg-gray-700 transition shadow-lg">
+              <button className="bg-green-600 text-white dark:bg-green-900 dark:text-black px-6 py-2 rounded-md font-semibold hover:bg-green-600 dark:hover-bg-gray-700 transition shadow-lg">
                 Shop now →
               </button>
             </Link>
@@ -34,7 +34,7 @@ export default function Heropage() {
                   .getElementById("products")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="border font-semibold border-white dark:border-gray-700 px-7 py-2 rounded-md hover:bg-green-900 dark:hover:bg-gray-700 transition"
+              className="border font-semibold border-white dark:border-gray-700 px-7 py-2 rounded-md hover:bg-green-900 dark:hover:bg-green-900 transition"
             >
               Explore
             </button>

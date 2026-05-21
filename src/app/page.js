@@ -65,7 +65,7 @@ export default function Home() {
     <main className="mb-10 pt-20 py-16 bg-linear-to-b from-gray-100 to-transparent dark:from-gray-800 dark:to-transparent rounded-xl animate-fadeIn">
       <Heropage />
       {loading && (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {[...Array(8)].map((_, i) => (
             <SkeletonCard key={i} />
           ))}
@@ -114,7 +114,7 @@ export default function Home() {
       )}
       {error && <p className="text-red-500 text-center">{error}</p>}
       {!loading && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-3 sm:px-6">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
