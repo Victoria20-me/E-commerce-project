@@ -6,19 +6,26 @@ A modern responsive e-commerce web application built with Next.js and Tailwind C
 
 https://mye-comm.netlify.app
 
+##GitHub Repository
+
+https://github.com/Victoria20-me/E-commerce-project
+
 ## Features
 
-- Product listing
+- Browse products
+- Search products instantly
+- Filter by category
 - Product details page
-- Search products
-- Category filtering
-- Shopping cart
-- Quantity management
+- Add to cart
+- Cart quantity controls
+- Remove items from cart
 - Wishlist functionality
+- Product ratings
+- Dark mode
 - Toast notifications
 - Skeleton loading states
-- Dark mode
-- Responsive design
+- Fully responsive design
+- Persistent cart using localStorage
 
 ## Technologies Used
 
@@ -49,19 +56,43 @@ https://mye-comm.netlify.app
 
 ## Lessons Learned
 
-- Working with APIs
-- Global state management using Context API
+During this project I learned:
+
+- API integration with Axios
+- State management using Context API
 - Dynamic routing in Next.js
+- Search and filtering logic
 - Responsive design principles
 - Local storage persistence
+- Component reusability
+- Error handling with try/catch
+
+## ⚡ Challenges Faced
+
+Some challenges I encountered included:
+
+- Managing global cart state
+- Making the application fully responsive
+- Persisting cart data after refresh
+- Handling dynamic routes
+- Optimizing user experience with loading states
 
 ## Future Improvements
 
-- Authentication
-- Payment integration
+- User Authentication
+- Stripe Payment integration
 - Order history
-- Backend database
+- Product Reviews
+- Backend Integration
 
 ## Author
 
 Ayomide Famoriyo
+
+Frontend Developer
+
+LinkedIn:
+www.linkedin.com/in/famoriyoayomide
+
+Portfolio:
+https://portfolio-ayomide.vercel.app/
